@@ -12,7 +12,7 @@ header {
 }
 
 .question-image {
-    margin: auto;
+    margin: 25px auto;
 }
 
 .todomvc-wrapper {
@@ -92,6 +92,10 @@ input[type="checkbox"] {
     text-align: center;
 }
 
+.summary h2 {
+    margin-top: 0;
+}
+
 .todoapp {
     background: #fff;
     margin: 130px 0 40px 0;
@@ -120,7 +124,7 @@ input[type="checkbox"] {
 
 .todoapp h1 {
     position: absolute;
-    top: -155px;
+    top: -165px;
     width: 100%;
     font-size: 100px;
     font-weight: 100;
@@ -234,10 +238,9 @@ label[for='toggle-all'] {
     border: none; /* Mobile Safari */
     -webkit-appearance: none;
     appearance: none;
-}
-
-.todo-list li .toggle:after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    margin-left: 10px;
 }
 
 .todo-list li .toggle-checked:after {

@@ -5200,7 +5200,7 @@ var $author$project$Main$defaultEntries = _List_fromArray(
 		$author$project$Main$newEntry,
 		'What is the angle of x?',
 		_List_fromArray(
-			['15°', '25°', '65°', '90°']),
+			['50°', '40°', '60°', '90°']),
 		1,
 		'default-7')
 	]);
@@ -5412,7 +5412,7 @@ var $elm$virtual_dom$VirtualDom$text = _VirtualDom_text;
 var $elm$html$Html$text = $elm$virtual_dom$VirtualDom$text;
 var $author$project$Main$viewControlsCount = F3(
 	function (correctCnt, totalCnt, entriesLeft) {
-		var examStatus = ((totalCnt > 0) && (!entriesLeft)) ? 'Completed' : ((entriesLeft === 1) ? ($elm$core$String$fromInt(entriesLeft) + ' with question left') : ($elm$core$String$fromInt(entriesLeft) + ' questions left'));
+		var examStatus = ((totalCnt > 0) && (!entriesLeft)) ? 'Completed' : ((entriesLeft === 1) ? ($elm$core$String$fromInt(entriesLeft) + ' question left') : ($elm$core$String$fromInt(entriesLeft) + ' questions left'));
 		var examScore = ' ';
 		return A2(
 			$elm$html$Html$span,
@@ -5502,7 +5502,7 @@ var $author$project$Main$viewQuizNavigation = function (currentIndex) {
 					])),
 				$elm$html$Html$text(' '),
 				$elm$html$Html$text(
-				' | ' + ($elm$core$String$fromInt(currentIndex) + ' | ')),
+				' | ' + ($elm$core$String$fromInt(currentIndex + 1) + ' | ')),
 				$elm$html$Html$text(' '),
 				A2(
 				$elm$html$Html$li,
@@ -5761,6 +5761,11 @@ var $elm$html$Html$Attributes$width = function (n) {
 		$elm$core$String$fromInt(n));
 };
 var $author$project$Main$viewEntry = function (model) {
+	var totalCnt = $elm$core$List$length(model.entries);
+	var isCorrect = function (entryInput) {
+		return _Utils_eq(entryInput.selected, entryInput.correct);
+	};
+	var hiddenFlag = ((totalCnt > 0) && _Utils_eq(model.current, totalCnt)) ? 'none' : 'block';
 	var examArr = $elm$core$Array$fromList(model.entries);
 	var entry = function () {
 		var _v0 = A2($elm$core$Array$get, model.current, examArr);
@@ -5768,11 +5773,13 @@ var $author$project$Main$viewEntry = function (model) {
 			var ent = _v0.a;
 			return ent;
 		} else {
-			return A4($author$project$Main$newEntry, '•', _List_Nil, -1, model.uid);
+			return A4($author$project$Main$newEntry, '', _List_Nil, -1, model.uid);
 		}
 	}();
 	var imagePath = 'images/' + (entry.uid + '.png');
 	var title = entry.description;
+	var correctCnt = $elm$core$List$length(
+		A2($elm$core$List$filter, isCorrect, model.entries));
 	var choices = entry.answers;
 	return A2(
 		$elm$html$Html$div,
@@ -5798,7 +5805,8 @@ var $author$project$Main$viewEntry = function (model) {
 						$elm$html$Html$p,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('new-todo')
+								$elm$html$Html$Attributes$class('new-todo'),
+								A2($elm$html$Html$Attributes$style, 'display', hiddenFlag)
 							]),
 						_List_fromArray(
 							[
@@ -5829,7 +5837,7 @@ var $author$project$Main$viewSummary = F2(
 		var isCorrect = function (entry) {
 			return _Utils_eq(entry.selected, entry.correct);
 		};
-		var hiddenFlag = ((totalCnt > 0) && _Utils_eq(current, totalCnt)) ? 'visible' : 'hidden';
+		var hiddenFlag = ((totalCnt > 0) && _Utils_eq(current, totalCnt)) ? 'block' : 'none';
 		var entriesLeft = totalCnt - $elm$core$List$length(
 			A2($elm$core$List$filter, isSelected, entries));
 		var correctCnt = $elm$core$List$length(
@@ -5840,7 +5848,7 @@ var $author$project$Main$viewSummary = F2(
 			_List_fromArray(
 				[
 					$elm$html$Html$Attributes$class('header'),
-					A2($elm$html$Html$Attributes$style, 'visibility', hiddenFlag)
+					A2($elm$html$Html$Attributes$style, 'display', hiddenFlag)
 				]),
 			_List_fromArray(
 				[

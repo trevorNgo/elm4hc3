@@ -127,7 +127,7 @@ viewEntry model =
                     ent
 
                 Nothing ->
-                    newEntry "•" [] -1 model.uid
+                    newEntry "" [] -1 model.uid
 
         title =
             entry.description
@@ -137,12 +137,28 @@ viewEntry model =
 
         imagePath = 
             "images/" ++ entry.uid ++ ".png"
+
+        isCorrect entryInput =
+            entryInput.selected == entryInput.correct
+
+        correctCnt =
+            List.length (List.filter isCorrect model.entries)
+
+        totalCnt =
+            List.length model.entries
+
+        hiddenFlag =
+            if totalCnt > 0 && model.current == totalCnt then
+                "none"
+
+            else
+                "block"
     in
     div []
         [ header
             [ class "header" ]
             [ h1 [] [ text "Angle Quiz" ]
-            , p [ class "new-todo" ] [ text title ]
+            , p [ class "new-todo", style "display" hiddenFlag ] [ text title ]
             , img [src imagePath, width 250, height 250, class "question-image"] []
             ]
         , viewChoices choices model.uid model.current entry
@@ -227,10 +243,10 @@ viewSummary entries current =
         {--hidden/show-}
         hiddenFlag =
             if totalCnt > 0 && current == totalCnt then
-                "visible"
+                "block"
 
             else
-                "hidden"
+                "none"
 
         examScore =
             String.fromInt correctCnt
@@ -242,7 +258,7 @@ viewSummary entries current =
     in
     div
         [ class "header"
-        , style "visibility" hiddenFlag
+        , style "display" hiddenFlag
         ]
         [ section
             [ class "summary" ]
@@ -291,7 +307,7 @@ viewControlsCount correctCnt totalCnt entriesLeft =
                 "Completed"
 
             else if entriesLeft == 1 then
-                String.fromInt entriesLeft ++ " with question left"
+                String.fromInt entriesLeft ++ " question left"
 
             else
                 String.fromInt entriesLeft ++ " questions left"
@@ -311,7 +327,7 @@ viewQuizNavigation currentIndex =
             [ onClick PreviousEntry ]
             [ img [ class "elm-quiz-btn-prev" ] [] ]
         , text " "
-        , text (" | " ++ String.fromInt currentIndex ++ " | ")
+        , text (" | " ++ String.fromInt (currentIndex + 1) ++ " | ")
         , text " "
         , li
             [ onClick NextEntry ]
