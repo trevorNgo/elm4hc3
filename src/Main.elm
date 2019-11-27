@@ -417,7 +417,9 @@ defaultEntries =
         newEntry "What is the angle of y?" [ "45°", "30°", "60°", "90°" ] 1 "default-2",
         newEntry "What is the angle of x?" [ "125°", "65°", "55°", "90°" ] 2 "default-3",
         newEntry "What is the angle of x?" [ "150°", "130°", "120°", "140°" ] 3 "default-4",
-        newEntry "What is the angle of z?" [ "55°", "65°", "70°", "115°" ] 0 "default-5",
-        newEntry "What is the angle of x?" [ "28°", "92°", "82°", "152°" ] 3 "default-6",
-        newEntry "What is the angle of x?" [ "50°", "40°", "60°", "90°" ] 1 "default-7"
+        newEntry "What is the angle of z?" [ "55°", "65°", "40°", "115°" ] 0 "default-5",
+        newEntry "What is the angle of x?" [ "45°", "150°", "70°", "60°" ] 2 "default-6",
+        newEntry "What is the angle of X?" [ "50°", "95°", "65°", "35°" ] 0 "default-7",
+        newEntry "What is the angle of z?" [ "115°", "75°", "50°", "80°" ] 3 "default-8",
+        newEntry "What is the angle of x?" [ "50°", "40°", "60°", "90°" ] 1 "default-9"
     ]

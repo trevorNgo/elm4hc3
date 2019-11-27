@@ -5186,23 +5186,37 @@ var $author$project$Main$defaultEntries = _List_fromArray(
 		$author$project$Main$newEntry,
 		'What is the angle of z?',
 		_List_fromArray(
-			['55°', '65°', '70°', '115°']),
+			['55°', '65°', '40°', '115°']),
 		0,
 		'default-5'),
 		A4(
 		$author$project$Main$newEntry,
 		'What is the angle of x?',
 		_List_fromArray(
-			['28°', '92°', '82°', '152°']),
-		3,
+			['45°', '150°', '70°', '60°']),
+		2,
 		'default-6'),
+		A4(
+		$author$project$Main$newEntry,
+		'What is the angle of X?',
+		_List_fromArray(
+			['50°', '95°', '65°', '35°']),
+		0,
+		'default-7'),
+		A4(
+		$author$project$Main$newEntry,
+		'What is the angle of z?',
+		_List_fromArray(
+			['115°', '75°', '50°', '80°']),
+		3,
+		'default-8'),
 		A4(
 		$author$project$Main$newEntry,
 		'What is the angle of x?',
 		_List_fromArray(
 			['50°', '40°', '60°', '90°']),
 		1,
-		'default-7')
+		'default-9')
 	]);
 var $author$project$Main$defaultID = 'default';
 var $author$project$Main$emptyModel = {current: 0, entries: $author$project$Main$defaultEntries, error: '', uid: $author$project$Main$defaultID};
