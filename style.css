@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-
 html,
 body {
     margin: 0;
@@ -33,20 +31,16 @@ button {
     appearance: none;
     -webkit-font-smoothing: antialiased;
     -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
 }
 
 body {
-    font: 14px 'Oswald', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font: 14px 'Roboto', Arial, sans-serif;
     line-height: 1.4em;
-    background: #f5f5f5;
-    color: #4d4d4d;
+    background: #171717;
+    color: #343434;
     min-width: 230px;
     max-width: 550px;
     margin: 0 auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
     font-weight: 300;
 }
 
@@ -68,8 +62,8 @@ input[type="checkbox"] {
 }
 
 .elm-quiz-btn-prev {
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   border: none;
   background-size: contain;
   background-image:
@@ -77,11 +71,18 @@ input[type="checkbox"] {
 }
 
 .elm-quiz-btn-next {
-  width: 16px;
-  height: 16px;
+  width: 25px;
+  height: 25px;
   background-size: contain;
   background-image:
     url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cGF0aCBkPSJNMTguNjI5IDE1Ljk5N2wtNy4wODMtNy4wODFMMTMuNDYyIDdsOC45OTcgOC45OTdMMTMuNDU3IDI1bC0xLjkxNi0xLjkxNnoiLz48L3N2Zz4=');
+}
+
+.reminder {
+    font-size: 22px;
+    text-align: center;
+    padding: 20px;
+    color: lightgray;
 }
 
 .summary {
@@ -100,26 +101,9 @@ input[type="checkbox"] {
     background: #fff;
     margin: 130px 0 40px 0;
     position: relative;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2),
-                0 25px 50px 0 rgba(0, 0, 0, 0.1);
-}
-
-.todoapp input::-webkit-input-placeholder {
-    font-style: italic;
-    font-weight: 300;
-    color: #e6e6e6;
-}
-
-.todoapp input::-moz-placeholder {
-    font-style: italic;
-    font-weight: 300;
-    color: #e6e6e6;
-}
-
-.todoapp input::input-placeholder {
-    font-style: italic;
-    font-weight: 300;
-    color: #e6e6e6;
+    box-shadow: 0px 10px 4px 0 rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 640px;
 }
 
 .todoapp h1 {
@@ -129,18 +113,17 @@ input[type="checkbox"] {
     font-size: 100px;
     font-weight: 100;
     text-align: center;
-    color: rgba(175, 47, 47, 0.15);
-    -webkit-text-rendering: optimizeLegibility;
-    -moz-text-rendering: optimizeLegibility;
-    text-rendering: optimizeLegibility;
+    font-weight: bolder;
+    color: white !important;
 }
 
 .new-todo,
 .edit {
+    text-align: center;
     position: relative;
     margin: 0;
     width: 100%;
-    font-size: 18px;
+    font-size: 24px;
     font-family: inherit;
     font-weight: inherit;
     line-height: 1.4em;
@@ -151,16 +134,13 @@ input[type="checkbox"] {
     border: 1px solid #999;
     box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
 }
 
 .new-todo {
     padding: 16px 16px 16px 20px;
     border: none;
     background: rgba(0, 0, 0, 0.003);
-    box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
+    box-shadow: inset 0 3px 1px rgba(0,0,0,0.03);
 }
 
 .main {
@@ -251,7 +231,7 @@ label[for='toggle-all'] {
     white-space: pre-line;
     word-break: break-all;
     padding: 15px 60px 15px 15px;
-    margin-left: 45px;
+    margin-left: 60px;
     display: block;
     line-height: 1.2;
     transition: color 0.4s;
@@ -297,27 +277,25 @@ label[for='toggle-all'] {
     margin-bottom: -1px;
 }
 
+.todo-list li:hover {
+    background: lightblue;
+}
+
+.todo-list li:hover input {
+    border: 1px solid #434;
+}
+
 .footer {
     color: #777;
-    padding: 10px 15px;
+    padding: 20px 15px;
     height: 20px;
     text-align: center;
     border-top: 1px solid #e6e6e6;
+    font-size: 1.2rem;
 }
 
-.footer:before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 50px;
-    overflow: hidden;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
-                0 8px 0 -3px #f6f6f6,
-                0 9px 1px -3px rgba(0, 0, 0, 0.2),
-                0 16px 0 -6px #f6f6f6,
-                0 17px 2px -6px rgba(0, 0, 0, 0.2);
+.filters {
+    line-height: 20px;
 }
 
 .todo-count {

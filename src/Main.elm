@@ -160,6 +160,7 @@ viewEntry model =
             [ h1 [] [ text "Angle Quiz" ]
             , p [ class "new-todo", style "display" hiddenFlag ] [ text title ]
             , img [src imagePath, width 250, height 250, class "question-image"] []
+            , div [ class "reminder" ] [text "Click the circles to select that answer!" ]
             ]
         , viewChoices choices model.uid model.current entry
         ]

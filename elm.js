@@ -5835,7 +5835,17 @@ var $author$project$Main$viewEntry = function (model) {
 								$elm$html$Html$Attributes$height(250),
 								$elm$html$Html$Attributes$class('question-image')
 							]),
-						_List_Nil)
+						_List_Nil),
+						A2(
+						$elm$html$Html$div,
+						_List_fromArray(
+							[
+								$elm$html$Html$Attributes$class('reminder')
+							]),
+						_List_fromArray(
+							[
+								$elm$html$Html$text('Click the circles to select that answer!')
+							]))
 					])),
 				A4($author$project$Main$viewChoices, choices, model.uid, model.current, entry)
 			]));
