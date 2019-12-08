@@ -5432,7 +5432,7 @@ var $author$project$Main$viewControlsCount = F3(
 			$elm$html$Html$span,
 			_List_fromArray(
 				[
-					$elm$html$Html$Attributes$class('todo-count')
+					$elm$html$Html$Attributes$class('quiz-count')
 				]),
 			_List_fromArray(
 				[
@@ -5760,7 +5760,7 @@ var $author$project$Main$viewChoices = F4(
 					$elm$html$Html$Keyed$ul,
 					_List_fromArray(
 						[
-							$elm$html$Html$Attributes$class('todo-list')
+							$elm$html$Html$Attributes$class('quiz-list')
 						]),
 					A2(
 						$elm$core$List$map,
@@ -5819,7 +5819,7 @@ var $author$project$Main$viewEntry = function (model) {
 						$elm$html$Html$p,
 						_List_fromArray(
 							[
-								$elm$html$Html$Attributes$class('new-todo'),
+								$elm$html$Html$Attributes$class('quiz-question'),
 								A2($elm$html$Html$Attributes$style, 'display', hiddenFlag)
 							]),
 						_List_fromArray(
@@ -5900,7 +5900,7 @@ var $author$project$Main$view = function (model) {
 		$elm$html$Html$div,
 		_List_fromArray(
 			[
-				$elm$html$Html$Attributes$class('todomvc-wrapper'),
+				$elm$html$Html$Attributes$class('quiz-wrapper'),
 				A2($elm$html$Html$Attributes$style, 'visibility', 'hidden')
 			]),
 		_List_fromArray(
@@ -5909,7 +5909,7 @@ var $author$project$Main$view = function (model) {
 				$elm$html$Html$section,
 				_List_fromArray(
 					[
-						$elm$html$Html$Attributes$class('todoapp')
+						$elm$html$Html$Attributes$class('quizapp')
 					]),
 				_List_fromArray(
 					[

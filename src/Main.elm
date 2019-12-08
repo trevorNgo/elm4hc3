@@ -103,11 +103,11 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div
-        [ class "todomvc-wrapper"
+        [ class "quiz-wrapper"
         , style "visibility" "hidden"
         ]
         [ section
-            [ class "todoapp" ]
+            [ class "quizapp" ]
             [ lazy viewEntry model
             , viewSummary model.entries model.current
             , viewControls model.entries model.current
@@ -158,7 +158,7 @@ viewEntry model =
         [ header
             [ class "header" ]
             [ h1 [] [ text "Angle Quiz" ]
-            , p [ class "new-todo", style "display" hiddenFlag ] [ text title ]
+            , p [ class "quiz-question", style "display" hiddenFlag ] [ text title ]
             , img [src imagePath, width 250, height 250, class "question-image"] []
             , div [ class "reminder" ] [text "Click the circles to select that answer!" ]
             ]
@@ -175,7 +175,7 @@ viewChoices answerChoices uid current entry =
     in
     section
         [ class "main" ]
-        [ Keyed.ul [ class "todo-list" ] <|
+        [ Keyed.ul [ class "quiz-list" ] <|
             List.map viewKeyedChoice (List.indexedMap Tuple.pair answerChoices)
         ]
 
@@ -314,7 +314,7 @@ viewControlsCount correctCnt totalCnt entriesLeft =
                 String.fromInt entriesLeft ++ " questions left"
     in
     span
-        [ class "todo-count" ]
+        [ class "quiz-count" ]
         [ text examScore
         , strong [] [ text examStatus ]
         ]
